@@ -19,6 +19,9 @@ import GraphQLBuilder
 gq = GraphQLBuilder.GraphQLBuilder()
 
 ```
+## Documentation
+
+The documentation can be found [here](https://sciencemediacenter.github.io/GraphQLBuilder/)
 
 ## Contributing
 
