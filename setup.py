@@ -24,6 +24,7 @@ setup(
         'requests>=2.26.0',
         'types-requests>=2.26.0',
         ],
+    packages=find_packages(),
     tests_require=['pytest'],
     description='GraphQL Query Builder with focus on hasura.io',
     long_description = long_description,
