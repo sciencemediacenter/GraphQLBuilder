@@ -20,6 +20,8 @@ GraphQLBuilder is a package that can support the creation of GraphQL queries. It
 
 Attention! This package is optimized for using a hasura.io endpoint - not all GraphQL functions are supported. 
 
+> This package is currently under development. Nevertheless, all existing functions should work in most cases.
+
 ## Installation
 
 ```bash
