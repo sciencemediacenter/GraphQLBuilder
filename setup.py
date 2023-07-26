@@ -6,7 +6,6 @@ except ImportError:
     from setuptools import setup, find_packages
 
 import os
-import src.GraphQLBuilder as GraphQLBuilder
 
 long_description = """
 GraphQLBuilder is a package that can support the creation of GraphQL queries. It provides various methods for translating dicts or lists into mutation objects, which can then be used in a gql query. 
@@ -16,7 +15,7 @@ Attention! This package is optimized for using a hasura.io endpoint - not all Gr
 
 setup(
     name='GraphQLBuilder',
-    version=GraphQLBuilder.__version__,
+    version='0.2.1',
     url='http://github.com/my_account/my_project/',
     license='GPLv3',
     author='Hendrik Adam',
