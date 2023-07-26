@@ -1,4 +1,4 @@
-import GraphQLBuilder as GraphQLBuilder
+from GraphQLBuilder import GraphQLBuilder as GraphQLBuilder
 import requests
 from requests_mock.mocker import Mocker
 
