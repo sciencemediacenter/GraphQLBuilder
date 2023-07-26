@@ -4,9 +4,6 @@ import os
 import requests
 from typing import Any, Union, List, Dict, Optional
 
-__version__ = "0.2.1"
-__author__ = 'Hendrik Adam <hendrik.adam@sciencemediacenter.de>'
-
 class GraphQLBuilder:
     """This Class is used to build GraphQL Queries and Mutations. All functions are created to help access the GraphQL API of Hasura.io. 
     
