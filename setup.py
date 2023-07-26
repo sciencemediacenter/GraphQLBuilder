@@ -16,7 +16,7 @@ Attention! This package is optimized for using a hasura.io endpoint - not all Gr
 setup(
     name='GraphQLBuilder',
     version='0.2.1',
-    url='http://github.com/my_account/my_project/',
+    url='https://github.com/sciencemediacenter/GraphQLBuilder',
     license='GPLv3',
     author='Hendrik Adam',
     author_email='hendrik.adam@sciencemediacenter.de',
@@ -24,8 +24,7 @@ setup(
         'requests>=2.26.0',
         'types-requests>=2.26.0',
         ],
-    tests_require=['nose'],
-    packages=find_packages(exclude=['tests']),
+    tests_require=['pytest'],
     description='GraphQ Query Builder with focus on hasura.io',
     long_description = long_description,
     platforms='any',
