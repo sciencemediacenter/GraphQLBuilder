@@ -18,10 +18,9 @@ To use the GraphQLBuilder in your project, you need to import it and initialize 
 
 .. code-block:: python
 
-   import GraphQLBuilder
+   from GraphQLBuilder import GraphQLBuilder
 
-   gql_builder = GraphQLBuilder()
-
+   gq = GraphQLBuilder.GraphQLBuilder()
 
 The "TypeSchema"
 ----------------
