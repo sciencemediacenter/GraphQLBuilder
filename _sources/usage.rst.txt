@@ -18,7 +18,7 @@ To use the GraphQLBuilder in your project, you need to import it and initialize 
 
 .. code-block:: python
 
-   from GraphQLBuilder import GraphQLBuilder
+   import GraphQLBuilder
 
    gq = GraphQLBuilder.GraphQLBuilder()
 
