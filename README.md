@@ -30,7 +30,7 @@ $ pip install git+https://github.com/sciencemediacenter/GraphQLBuilder
 
 
 ```python
-import GraphQLBuilder
+from GraphQLBuilder import GraphQLBuilder
 
 gq = GraphQLBuilder.GraphQLBuilder()
 
