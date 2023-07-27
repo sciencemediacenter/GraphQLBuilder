@@ -91,7 +91,7 @@
 
     <span class="n">ret</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s2">&quot;https://example.com/v1/graphql&quot;</span><span class="p">,</span> <span class="n">qry</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">gz</span><span class="o">.</span><span class="n">getPath</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;some_data_endpoint&#39;</span><span class="p">],</span> <span class="n">ret</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">gz</span><span class="o">.</span><span class="n">get_path</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;some_data_endpoint&#39;</span><span class="p">],</span> <span class="n">ret</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -131,7 +131,7 @@
     <span class="n">qry</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">build_insert_qry</span><span class="p">(</span><span class="s2">&quot;some_data_endpoint&quot;</span><span class="p">,</span> <span class="n">mutation_objects</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;stuff&#39;</span><span class="p">]</span><span class="s1">&#39;])</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="n">gz</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s2">&quot;https://example.com/v1/graphql&quot;</span><span class="p">,</span> <span class="n">qry</span><span class="p">,</span> <span class="n">bearer_token</span><span class="o">=</span><span class="s2">&quot;some_token&quot;</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">gz</span><span class="o">.</span><span class="n">getPath</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;some_data_endpoint&#39;</span><span class="p">],</span> <span class="n">ret</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">gz</span><span class="o">.</span><span class="n">get_path</span><span class="p">([</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;some_data_endpoint&#39;</span><span class="p">],</span> <span class="n">ret</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
