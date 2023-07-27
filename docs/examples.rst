@@ -19,7 +19,7 @@ Getting Data from an endpoint
 
         ret = gz.execute_query("https://example.com/v1/graphql", qry)
 
-        return gz.getPath(['data', 'some_data_endpoint'], ret)
+        return gz.get_path(['data', 'some_data_endpoint'], ret)
 
 Building an insert query
 ------------------------
@@ -60,4 +60,4 @@ Building an insert query
         qry = gz.build_insert_qry("some_data_endpoint", mutation_objects, ['id', 'name', 'foo', 'bar', 'stuff']'])
         ret = gz.execute_query("https://example.com/v1/graphql", qry, bearer_token="some_token")
 
-        return gz.getPath(['data', 'some_data_endpoint'], ret)
+        return gz.get_path(['data', 'some_data_endpoint'], ret)

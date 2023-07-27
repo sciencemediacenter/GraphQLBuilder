@@ -382,7 +382,7 @@ class GraphQLBuilder:
 
         return _query % (typename, qry_filter)
 
-    def execute_query(self, endpoint_url: str, qry: str, bearer_token: Optional[str] = "") -> List[Dict[str, Any]]:
+    def execute_query(self, endpoint_url: str, qry: str, bearer_token: Optional[str] = "") -> Dict[str, Any]:
         """
         Executes a GraphQL Query and returns the result as a List of Dicts
 
@@ -422,7 +422,7 @@ class GraphQLBuilder:
         if ret.status_code == 200:
             if ret.json().get("errors") is not None:
                 logging.error(json.dumps(ret.json(), ensure_ascii=False))
-                return []
+                return {}
             return ret.json()
         else:
             logging.error(f"   --- ERROR NOT 200 {ret.status_code}")
