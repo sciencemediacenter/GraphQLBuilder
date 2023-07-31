@@ -2,7 +2,7 @@ import json
 import logging
 import os
 import requests
-from typing import Any, Union, List, Dict, Optional
+from typing import Any, List, Dict, Optional, Iterable
 
 class GraphQLBuilder:
     """This Class is used to build GraphQL Queries and Mutations. All functions are created to help access the GraphQL API of Hasura.io. 
@@ -48,7 +48,7 @@ class GraphQLBuilder:
 
     def build_graphQL_mutation_objects_from_list(
         self, source_data: List[Any], key: str, itemtype: str, return_as_list: Optional[bool] = False
-    ) -> Union[str, List[Any]]:
+    ) -> str | List[Any]:
         """Build Graph QL Mutation Objects from a List of Items
 
         Args:
@@ -224,7 +224,7 @@ class GraphQLBuilder:
         return "{%s}" % ", ".join(_items)
 
     def build_search_qry(
-        self, typename: str, qry_filter: str, returning_fields: List[str or Dict[str, Any]], limit: Optional[int] = 10
+        self, typename: str, qry_filter: str, returning_fields: List[str | Dict[str, Any]], limit: Optional[int] = 10
     ) -> str:
         """Builds a Search Query with optional filter and returns it
 
@@ -303,7 +303,7 @@ class GraphQLBuilder:
         data_objects: List[Any],
         returning_objects: List[Any],
         update_constraint: Optional[str] = None,
-        update_field_list: Optional[List[str]] = [],
+        update_field_list: Optional[Iterable[str]] = [],
     ) -> str:
         """Builds a complete Mutation Query
 
@@ -312,7 +312,7 @@ class GraphQLBuilder:
             data_objects (List[Any]): List of the generated Mutation Objects (which should be strings by now!)
             returning_objects (List[Any]): List of fields to return. Strings, cannot be empty!
             update_constraint ([type], optional): Name of the update_constraint to check for. Defaults to None.
-            update_field_list (list, optional): Fields to be updated, when constraint hits. Defaults to [].
+            update_field_list (Iterable, optional): Fields to be updated, when constraint hits. Defaults to [].
 
         Returns:
             str: returnes the genrated query as string
@@ -361,7 +361,7 @@ class GraphQLBuilder:
                 " ".join(returning_objects),
             )
 
-    def build_delete_qry(self, typename: str, qry_filter: Optional[str] = {}) -> str:
+    def build_delete_qry(self, typename: str, qry_filter: Optional[str] = "") -> str:
         """Builds a delete query
 
         Args:
@@ -414,10 +414,10 @@ class GraphQLBuilder:
             )
         except requests.exceptions.HTTPError as errh:
             logging.error("==> Http Error: %s" % errh)
-            return
+            return {}
         except Exception as e:
             logging.error(f"==> {e}")
-            return
+            return {}
 
         if ret.status_code == 200:
             if ret.json().get("errors") is not None:
@@ -426,4 +426,4 @@ class GraphQLBuilder:
             return ret.json()
         else:
             logging.error(f"   --- ERROR NOT 200 {ret.status_code}")
-            return
+            return {}

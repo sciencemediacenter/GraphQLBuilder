@@ -37,6 +37,12 @@ import GraphQLBuilder
 gq = GraphQLBuilder.GraphQLBuilder()
 
 ```
+
+For testing, use: 
+
+```python
+pytest -v --cov=GraphQLBuilder tests/ --cov-report term-missing
+```
 ## Documentation
 
 The documentation can be found [here](https://sciencemediacenter.github.io/GraphQLBuilder/)

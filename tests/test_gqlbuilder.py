@@ -1,6 +1,7 @@
-from GraphQLBuilder import GraphQLBuilder as GraphQLBuilder
+import GraphQLBuilder
 import requests
 from requests_mock.mocker import Mocker
+from typing import Any, List
 
 # Thanks - https://stackoverflow.com/questions/16474848/python-how-to-compare-strings-and-ignore-white-space-and-special-characters
 def _cmp(a, b):
@@ -293,7 +294,7 @@ def test_execute_query(requests_mock: Mocker):
         qry,
         bearer_token="test_token"
     )
-    assert response == None
+    assert response == {}
 
     # Test Request Exception
     requests_mock.post('https://test.com/v1/graphql', exc="Test Exception")
@@ -302,7 +303,7 @@ def test_execute_query(requests_mock: Mocker):
         qry,
         bearer_token="test_token"
     )
-    assert response == None
+    assert response == {}
 
     # Test Status Code
     requests_mock.post('https://test.com/v1/graphql', status_code=404)
@@ -311,7 +312,7 @@ def test_execute_query(requests_mock: Mocker):
         qry,
         bearer_token="test_token"
     )
-    assert response == None
+    assert response == {}
 
     # Test Error in response
     requests_mock.post('https://test.com/v1/graphql', json={"errors": [{"message": "test_error"}]})
@@ -320,4 +321,4 @@ def test_execute_query(requests_mock: Mocker):
         qry,
         bearer_token="test_token"
     )
-    assert response == []
+    assert response == {}
