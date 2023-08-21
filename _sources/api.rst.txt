@@ -1,5 +1,5 @@
 API
 ===
 
-.. automodule:: src.GraphQLBuilder
+.. automodule:: GraphQLBuilder
     :members:
