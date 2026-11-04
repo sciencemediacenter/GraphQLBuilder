@@ -1,4 +1,4 @@
-requests==2.26.0
+requests==2.33.0
 requests-mock==1.11.0
 types-requests==2.26.0
 Sphinx==6.2.1
